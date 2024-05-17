@@ -45,7 +45,7 @@ export default function Navigation() {
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
           <Link color="foreground" href="#" className="dark:text-neutral-400">
-            About
+            Goals
           </Link>
         </NavbarItem>
         <NavbarItem>
@@ -55,12 +55,7 @@ export default function Navigation() {
             aria-current="page"
             className="dark:text-neutral-400"
           >
-            Goals
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#" className="dark:text-neutral-400">
-            Resources
+            Partnerships
           </Link>
         </NavbarItem>
       </NavbarContent>

@@ -19,8 +19,11 @@ const config: Config = {
       colors: {
         "AEGold-500": "#b68a35",
         "AEGold-400": "#cba344",
+        "AEGold-300": "#d7bc6d",
+        "AEGold-200": "#e6d7a2",
         "AEBlack-700": "#3e4046",
         "AEBlack-100": "#e1e3e5",
+        "AEBlack-200": "#c3c6cb",
       },
     },
   },
