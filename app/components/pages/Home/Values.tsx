@@ -34,7 +34,7 @@ const Values = () => {
     },
   ];
   return (
-    <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-white">
+    <section className="px-[5%] py-16 md:py-24 lg:py-28 bg-white dark:bg-AEBlack-950">
       <div className="container">
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-start md:gap-x-12 lg:gap-x-20 relative">
           <div className="grid grid-cols-1 gap-x-6 gap-y-8 py-2 md:grid-cols-2">
@@ -47,6 +47,7 @@ const Values = () => {
                     height="32"
                     fill="#000000"
                     viewBox="0 0 256 256"
+                    className="dark:fill-AEGold-500"
                   >
                     <path d={value.svgPath}></path>
                   </svg>
@@ -54,7 +55,7 @@ const Values = () => {
                 <h1 className="mb-3 text-xl font-bold md:mb-4 md:text-2xl ">
                   {value.title}
                 </h1>
-                <p>{value.description}</p>
+                <p className="dark:text-AEBlack-500">{value.description}</p>
               </div>
             ))}
           </div>

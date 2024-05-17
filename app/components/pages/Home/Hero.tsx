@@ -11,7 +11,7 @@ const Hero = () => {
     "/images/fishes-3.jpg",
   ];
   return (
-    <header className="bg-white grid grid-cols-1 gap-y-16 pt-16 md:grid-flow-row md:pt-24 lg:grid-flow-col lg:grid-cols-2 lg:items-center lg:pt-0">
+    <header className="bg-white dark:bg-AEBlack-950 grid grid-cols-1 gap-y-16 pt-16 md:grid-flow-row md:pt-24 lg:grid-flow-col lg:grid-cols-2 lg:items-center lg:pt-0">
       <div className="mx-[5%] max-w-[40rem] justify-self-start lg:ml-[5vw] lg:mr-20 lg:justify-self-end">
         <h1 className="mb-5 font-bold tracking-tighter text-4xl sm:text-5xl md:mb-6 md:text-6xl lg:text-7xl">
           Department of Fisheries

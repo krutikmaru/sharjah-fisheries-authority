@@ -24,7 +24,7 @@ export default function Navigation() {
   ];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} className="dark:bg-neutral-900">
+    <Navbar onMenuOpenChange={setIsMenuOpen} className="dark:bg-AEBlack-950">
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
