@@ -19,7 +19,7 @@ function Footer() {
             <div className="mb-6 md:mb-8">
               <div>
                 <p className="mb-5 md:mb-6 text-AE-Text-base text-center lg:text-left">
-                  Sharjah Fisheries Authority
+                  Sharjah Fish Resource Authority
                 </p>
               </div>
               <div className="text-center lg:text-left">
@@ -32,16 +32,16 @@ function Footer() {
                 <p className="mb-1 text-sm font-semibold">Contact:</p>
                 <p className="flex flex-col text-sm underline decoration-black underline-offset-1 md:mb-6">
                   <Link
-                    href="tel:+971065112222"
+                    href="tel:+(06) 511 5555"
                     className="focus-visible:outline-none"
                   >
-                    +971 065112222
+                    (06) 511 5555
                   </Link>
                   <Link
                     href="mailto:info@dma.shj.ae"
                     className="focus-visible:outline-none"
                   >
-                    info@dma.shj.ae
+                    info@fra.shj.ae
                   </Link>
                 </p>
               </div>

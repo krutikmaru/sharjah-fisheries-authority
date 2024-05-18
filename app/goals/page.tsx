@@ -9,17 +9,17 @@ const Goals = () => {
           <div className="mb-12 grid grid-cols-1 items-start justify-between gap-5 md:mb-18 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:mb-20 lg:gap-x-20">
             <div>
               <p className="mb-3 font-semibold md:mb-4 text-AEGold-500 text-AE-Text-base">
-                Sharjah Fisheries Authority (2024-2028)
+                Sharjah Fish Resource Authority (2024-2028)
               </p>
               <h2 className="text-AE-Text-H2 font-bold md:text-AE-Text-H1 lg:text-AE-Text-Display text-AEBlack-950 tracking-tighter dark:text-AEBlack-50">
                 Strategic Goals
               </h2>
             </div>
             <p className="md:text-AE-Text-base text-AEBlack-800 dark:text-AEBlack-200">
-              The Strategic Goals of the Sharjah Fisheries Authority (2024-2028)
-              aim to foster sustainable fisheries, empower fishermen with modern
-              techniques, and create robust industry infrastructure. The
-              Authority will optimize systems, innovate environments, and
+              The Strategic Goals of the Sharjah Fish Resource Authority
+              (2024-2028) aim to foster sustainable fisheries, empower fishermen
+              with modern techniques, and create robust industry infrastructure.
+              The Authority will optimize systems, innovate environments, and
               harness human talent, striving for self-sufficiency through
               sustainable resource management and marine preservation, ensuring
               food security for the emirate.
@@ -66,15 +66,15 @@ const Goals = () => {
         <div className="container ">
           <div className="mx-auto mb-12 w-full max-w-4xl text-left md:text-center md:mb-18 lg:mb-20 ">
             <p className="mb-3 font-semibold md:mb-4 text-AEGold-500 text-AE-Text-base">
-              Sharjah Fisheries Authority (2024-2028)
+              Sharjah Fish Resource Authority (2024-2028)
             </p>
             <h2 className="text-AE-Text-H4 mb-4 font-bold md:text-AE-Text-H3 lg:text-AE-Text-H2 text-AEBlack-950 tracking-tighter dark:text-AEBlack-50">
               Sustainable Development Goals{" "}
             </h2>
             <p className="text-AE-Text-base md:max-w-xl mx-auto text-AEBlack-800 dark:text-AEBlack-200">
-              In line with UAE Vision 2021, the Sharjah Fisheries Authority, in
-              collaboration with federal and local specialized entities, works
-              to achieve goals 3, 4, 8, 9, 14, and 17 of the Sustainable
+              In line with UAE Vision 2021, the Sharjah Fish Resource Authority,
+              in collaboration with federal and local specialized entities,
+              works to achieve goals 3, 4, 8, 9, 14, and 17 of the Sustainable
               Development Goals by implementing several projects aimed at
               preserving marine ecosystems and natural resources and ensuring
               their sustainability
