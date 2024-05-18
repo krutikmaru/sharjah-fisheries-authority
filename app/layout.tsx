@@ -23,7 +23,7 @@ export default function RootLayout({
         <NextUIProvider>
           <Navigation />
           <div className="bg-AEBlack-100 w-screen min-h-screen">{children}</div>
-          <Footer />
+          {/* <Footer /> */}
         </NextUIProvider>
       </body>
     </html>
