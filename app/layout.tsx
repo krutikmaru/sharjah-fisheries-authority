@@ -19,11 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="overflow-x-hidden">
-      <body className={inter.className + " overflow-x-hidden"}>
+      <body className={inter.className + " relative"}>
         <NextUIProvider>
-          <Navigation />
-          <div className="bg-AEBlack-100 w-screen min-h-screen">{children}</div>
-          {/* <Footer /> */}
+          <div className="bg-AEBlack-100 w-screen min-h-screen">
+            <Navigation />
+            {children}
+          </div>
+          <Footer />
         </NextUIProvider>
       </body>
     </html>
