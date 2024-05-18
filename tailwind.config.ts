@@ -16,6 +16,23 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontSize: {
+        "AE-Text-Display": ["4.75rem", "120%"],
+        "AE-Text-H1": ["3.875rem", "120%"],
+        "AE-Text-H2": ["3rem", "120%"],
+        "AE-Text-H3": ["2.5rem", "120%"],
+        "AE-Text-H4": ["2rem", "120%"],
+        "AE-Text-H5": ["1.625rem", "120%"],
+        "AE-Text-H6": ["1.25rem", "120%"],
+
+        "AE-Text-3xl": ["1.875rem", "2.25rem"],
+        "AE-Text-2xl": ["1.5rem", "2rem"],
+        "AE-Text-xl": ["1.25rem", "1.75rem"],
+        "AE-Text-lg": ["1.125rem", "1.75rem"],
+        "AE-Text-base": ["1", "1.5rem"],
+        "AE-Text-sm": ["0.875rem", "1.25rem"],
+        "AE-Text-xs": ["0.75rem", "1rem"],
+      },
       colors: {
         "AEGold-50": "#f9f7ed",
         "AEGold-100": "#f2eccf",

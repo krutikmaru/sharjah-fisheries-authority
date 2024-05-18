@@ -16,11 +16,9 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const menuItems = [
-    "Goals",
-    "Resources",
-    "Services",
-    "License and Registration",
-    "About",
+    { title: "Goals", href: "/goals" },
+    { title: "Partnerships", href: "/partnerships" },
+    { title: "About", href: "/about" },
   ];
 
   return (
@@ -31,7 +29,7 @@ export default function Navigation() {
           className="sm:hidden"
         />
         <NavbarBrand>
-          <Link href="#">
+          <Link href="/">
             <Image
               src="/images/logo.png"
               width={40}
@@ -43,40 +41,31 @@ export default function Navigation() {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link color="foreground" href="#" className="dark:text-neutral-400">
-            Goals
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link
-            href="#"
-            color="foreground"
-            aria-current="page"
-            className="dark:text-neutral-400"
-          >
-            Partnerships
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
-
-      <NavbarMenu>
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+          <NavbarItem key={`${item}-${index}`}>
             <Link
               color="foreground"
-              //   color={
-              //     index === 2
-              //       ? "primary"
-              //       : index === menuItems.length - 1
-              //       ? "danger"
-              //       : "foreground"
-              //   }
-              className="w-full"
-              href="#"
+              href={item.href}
+              className="dark:text-neutral-400"
+            >
+              {item.title}
+            </Link>
+          </NavbarItem>
+        ))}
+      </NavbarContent>
+
+      <NavbarMenu className="dark:bg-black">
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem
+            key={`${item}-${index}`}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <Link
+              className="w-full text-AEBlack-950 dark:text-AEBlack-50"
+              href={item.href}
               size="lg"
             >
-              {item}
+              {item.title}
             </Link>
           </NavbarMenuItem>
         ))}
