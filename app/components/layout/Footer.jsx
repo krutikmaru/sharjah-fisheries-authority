@@ -113,7 +113,7 @@ function Footer() {
         <div className="flex flex-col-reverse items-start justify-between pt-6 text-sm md:flex-row md:items-center md:pt-8">
           <p className="mt-8 md:mt-0">
             © {new Date().getFullYear()} All rights reserved - Department of
-            Municipalities Affairs.
+            Fisheries.
           </p>
           <ul className="grid grid-flow-row grid-cols-[max-content] justify-center gap-x-0 gap-y-4 text-sm md:grid-flow-col md:gap-x-6 md:gap-y-0">
             <li className="underline">
