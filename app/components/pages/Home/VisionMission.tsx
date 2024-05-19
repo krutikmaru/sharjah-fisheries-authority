@@ -8,10 +8,10 @@ import {
 
 export default function GlowingStarsBackgroundCardPreview() {
   return (
-    <div className="w-screen py-20 px-10 sm:px-0 flex flex-col md:flex-row items-center justify-center antialiased space-x-0 md:space-x-4 space-y-4 md:space-y-0">
+    <div className="w-screen py-20 px-10 sm:px-0 flex flex-col md:flex-row items-center justify-center antialiased space-x-0 md:space-x-4 md:gap-8 space-y-4 md:space-y-0">
       <GlowingStarsBackgroundCard>
         <GlowingStarsTitle>Our Vision</GlowingStarsTitle>
-        <div className="flex justify-between items-end">
+        <div className="flex justify-between items-end ">
           <GlowingStarsDescription>
             Leading in the fields of fisheries locally.
           </GlowingStarsDescription>

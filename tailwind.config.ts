@@ -15,6 +15,7 @@ const config: Config = {
     "./node_modules/@nextui-org/theme/dist/components/[object Object].js",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       backgroundImage: {

@@ -35,7 +35,7 @@ const Values = () => {
     },
   ];
   return (
-    <section className="px-[5%] py-16 md:py-24 lg:py-28 0">
+    <section className="flex px-[5%] py-16 md:py-24 lg:py-28 0 justify-center">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 md:items-start md:gap-x-12 lg:gap-x-20 relative">
           <div className="grid grid-cols-1 gap-x-6 gap-y-8 py-2 md:grid-cols-2">
