@@ -37,7 +37,7 @@ const Values = () => {
   return (
     <section className="px-[5%] py-16 md:py-24 lg:py-28 0">
       <div className="container">
-        <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-start md:gap-x-12 lg:gap-x-20 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 md:items-start md:gap-x-12 lg:gap-x-20 relative">
           <div className="grid grid-cols-1 gap-x-6 gap-y-8 py-2 md:grid-cols-2">
             {values.map((value, index) => (
               <div key={index}>
@@ -48,7 +48,7 @@ const Values = () => {
                     height="32"
                     fill="#000000"
                     viewBox="0 0 256 256"
-                    className="dark:fill-AEGold-500"
+                    className="fill-AEGold-500"
                   >
                     <path d={value.svgPath}></path>
                   </svg>
@@ -63,7 +63,7 @@ const Values = () => {
             ))}
           </div>
           <CardContainer className="inter-var  rounded-md  relative flex flex-col items-start justify-start antialiased">
-            <CardBody className="bg-AEBlack-950 relative group/card w-full h-full dark:bg-black dark:border-white/[0.2] border-black/[0.1] rounded-xl p-6 border flex flex-col justify-center items-center space-y-4 ">
+            <CardBody className="dark:bg-AEBlack-950 relative group/card w-full h-full backdrop-blur-lg dark:border-white/[0.2] border-black/[0.1] rounded-xl p-6 border flex flex-col justify-center items-center space-y-4 ">
               <CardItem
                 translateZ="50"
                 className="text-AEGold-500 text-5xl md:text-7xl font-semibold tracking-tighter"
