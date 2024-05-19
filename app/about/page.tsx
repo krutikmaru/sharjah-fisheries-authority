@@ -20,13 +20,13 @@ function Management() {
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
             <p className="mb-3 font-semibold md:mb-4 text-AEGold-500 text-AE-Text-base">
-              Senior Management of the Sharjah Fisheries Authority
+              Senior Management of the Sharjah Fish Resource Authority
             </p>
             <h2 className="text-AE-Text-H3 mb-4 font-bold md:text-AE-Text-H2 lg:text-AE-Text-H1 text-AEBlack-950 tracking-tighter dark:text-AEBlack-50">
-              His Excellency \ Ali Ahmed Ali Abu Ghazeen
+              His Excellency Ali Ahmed Ali Abu Ghazeen
             </h2>
             <p className="md:text-AE-Text-base text-AEBlack-800 dark:text-AEBlack-200">
-              Member of the Executive Council, Chairman of the Sharjah Fisheries
+              Member of the Executive Council, Chairman of the Sharjah Fish Resource Authority
               Authority. His responsibilities include developing and
               implementing local strategies and plans aimed at enhancing food
               and water security for the Emirate of Sharjah and preserving and
@@ -121,7 +121,7 @@ const Specializations = () => {
           </h3>
 
           <p className="mb-3 font-semibold md:mb-4 text-AEGold-500 text-AE-Text-base">
-            Sharjah Fisheries Authority specializations
+            Sharjah Fish Resource Authority specializations
           </p>
         </div>
         <div className="grid grid-cols-1 gap-x-12 gap-y-10 md:gap-y-12">

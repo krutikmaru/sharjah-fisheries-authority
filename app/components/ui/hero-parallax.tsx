@@ -105,7 +105,7 @@ export const Header = () => {
   return (
     <div className="max-w-7xl relative mx-auto pb-10 md:pb-28 px-4 w-full  left-0 top-0">
       <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold dark:text-white">
-        Department of <br /> Fisheries
+      Fish Resource Authority
       </h1>
       <p className="max-w-2xl text-sm md:text-xl mt-4 text-AEBlack-800 dark:text-AEBlack-200">
         To develop fisheries, empower fishermen, and enhance partnerships to

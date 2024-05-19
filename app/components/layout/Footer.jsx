@@ -112,8 +112,8 @@ function Footer() {
         <div className="h-px w-full bg-black dark:bg-AEBlack-800"></div>
         <div className="flex flex-col-reverse items-start justify-between pt-6 text-sm md:flex-row md:items-center md:pt-8">
           <p className="mt-8 md:mt-0">
-            © {new Date().getFullYear()} All rights reserved - Department of
-            Fisheries.
+            © {new Date().getFullYear()} All rights reserved -
+            Fish Resource Authority.
           </p>
           <ul className="grid grid-flow-row grid-cols-[max-content] justify-center gap-x-0 gap-y-4 text-sm md:grid-flow-col md:gap-x-6 md:gap-y-0">
             <li className="underline">
