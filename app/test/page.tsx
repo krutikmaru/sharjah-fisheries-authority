@@ -1,12 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import React from "react";
-import { CardBody, CardContainer, CardItem } from "../../ui/3d-card";
-import { BackgroundBeams } from "../../ui/background-beams";
+import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card";
+import Link from "next/link";
+import { BackgroundBeams } from "../components/ui/background-beams";
 
 export default function ThreeDCardDemo() {
   return (
-    <div className="min-h-screen md:h-screen w-screen  flex flex-col justify-center items-center space-x-0 space-y-4 md:space-x-4 md:space-y-0 py-20 px-10 lg:px-20 md:flex-row">
+    <div className="min-h-screen md:h-screen w-screen  dark:bg-AEBlack-950 flex flex-col justify-center items-center space-x-0 space-y-4 md:space-x-4 md:space-y-0 py-20 px-10 lg:px-20 md:flex-row">
       <CardContainer className="inter-var  w-[500px] h-[600px] rounded-md  relative flex flex-col items-center justify-center antialiased">
         <CardBody className="bg-AEBlack-950 relative group/card w-full h-full dark:bg-black dark:border-white/[0.2] border-black/[0.1] rounded-xl p-6 border flex flex-col justify-center items-center space-y-4 ">
           <CardItem
@@ -65,3 +67,74 @@ export default function ThreeDCardDemo() {
     </div>
   );
 }
+
+// "use client";
+// import React from "react";
+// import { HeroParallax } from "../components/ui/hero-parallax";
+
+// export default function HeroParallaxDemo() {
+//   return <HeroParallax products={products} />;
+// }
+// export const products = [
+//   {
+//     title: "Fisherman",
+//     link: "",
+//     thumbnail: "/images/home-1.jpg",
+//   },
+//   {
+//     title: "Fish",
+//     link: "",
+//     thumbnail: "/images/home-3.jpg",
+//   },
+//   {
+//     title: "Fisherman",
+//     link: "",
+//     thumbnail: "/images/home-2.jpg",
+//   },
+
+//   {
+//     title: "Fishes",
+//     link: "",
+//     thumbnail: "/images/fishes-1.jpg",
+//   },
+//   {
+//     title: "Fishes",
+//     link: "",
+//     thumbnail: "/images/fishes-2.jpg",
+//   },
+//   {
+//     title: "Fish",
+//     link: "",
+//     thumbnail: "/images/fishes-3.jpg",
+//   },
+//   {
+//     title: "Fishing",
+//     link: "",
+//     thumbnail: "/images/home-4.jpg",
+//   },
+//   {
+//     title: "Fishing",
+//     link: "",
+//     thumbnail: "/images/home-5.jpg",
+//   },
+//   {
+//     title: "Fishing",
+//     link: "",
+//     thumbnail: "/images/home-6.jpg",
+//   },
+//   {
+//     title: "Fishes",
+//     link: "",
+//     thumbnail: "/images/home-7.jpg",
+//   },
+//   {
+//     title: "Fishes",
+//     link: "",
+//     thumbnail: "/images/home-8.jpg",
+//   },
+//   {
+//     title: "Fish",
+//     link: "",
+//     thumbnail: "/images/home-9.jpg",
+//   },
+// ];

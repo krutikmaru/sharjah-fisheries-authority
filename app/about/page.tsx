@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 function page() {
   return (
-    <div className="bg-white dark:bg-AEBlack-950">
+    <div className="">
       <Management />
       <Specializations />
     </div>

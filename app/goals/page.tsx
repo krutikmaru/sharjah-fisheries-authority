@@ -4,7 +4,7 @@ import React from "react";
 const Goals = () => {
   return (
     <>
-      <section className="bg-white dark:bg-AEBlack-950 px-[5%] py-16 md:py-24 lg:py-28 flex justify-center items-center">
+      <section className=" px-[5%] py-16 md:py-24 lg:py-28 flex justify-center items-center">
         <div className="container flex flex-col items-start">
           <div className="mb-12 grid grid-cols-1 items-start justify-between gap-5 md:mb-18 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:mb-20 lg:gap-x-20">
             <div>
@@ -25,7 +25,7 @@ const Goals = () => {
               food security for the emirate.
             </p>
           </div>
-          <div className="w-full h-96 bg-AEBlack-100 dark:bg-AEBlack-900 mb-12 md:mb-18 lg:mb-20 rounded-lg relative">
+          <div className="w-full h-96  mb-12 md:mb-18 lg:mb-20 rounded-lg relative">
             <Image
               src="/images/home-1.jpg"
               alt="Goals Display Image"
@@ -62,7 +62,7 @@ const Goals = () => {
           </div>
         </div>
       </section>
-      <section className="px-[5%] py-16 bg-white dark:bg-AEBlack-950 flex justify-center items-center">
+      <section className="px-[5%] py-16 flex justify-center items-center">
         <div className="container ">
           <div className="mx-auto mb-12 w-full max-w-4xl text-left md:text-center md:mb-18 lg:mb-20 ">
             <p className="mb-3 font-semibold md:mb-4 text-AEGold-500 text-AE-Text-base">

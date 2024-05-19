@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <footer className="px-[5%] py-12 md:py-18 lg:py-20 ">
+    <footer className="px-[5%] py-12 md:py-18 lg:py-20 relative z-20">
       <div className="container">
         <div className="grid grid-cols-1 gap-x-[4vw] gap-y-12 pb-12 md:gap-y-16 md:pb-18 lg:grid-cols-[1fr_0.5fr] lg:gap-y-4 lg:pb-20">
           <div className="flex flex-col justify-center items-center lg:items-start">
