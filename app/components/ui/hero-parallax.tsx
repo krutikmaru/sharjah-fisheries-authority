@@ -103,7 +103,7 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto pb-10 md:pb-28 w-full  left-0 top-0 px-4 sm:px-20">
+    <div className="max-w-7xl relative mx-auto py-10 md:py-28 w-full  left-0 top-0 px-4 sm:px-20">
       <h1 className="text-AE-Text-H3 sm:text-AE-Text-H2 md:text-AE-Text-H1 lg:text-AE-Text-Display font-bold text-AEBlack-950 dark:text-AEBlack-50 tracking-tighter ">
         Fish Resource Authority
       </h1>
