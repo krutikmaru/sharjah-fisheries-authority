@@ -1,9 +1,19 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import useTranslation from "next-translate/useTranslation";
+import { useRouter, useParams } from "next/navigation";
 
 function Footer() {
+  const { t } = useTranslation("common");
+  const { locale, locales, push } = useRouter();
+  console.log(locale, locales, push, "meera");
+  const changeLanguage = (newLocale) => {
+    // push()
+  };
+
   return (
-    <footer className="px-[5%] py-12 md:py-18 lg:py-20 relative z-20">
+    <footer className="px-[5%] py-12 md:py-18 lg:py-20 relative z-20 bg-AEBlack-50 dark:bg-AEBlack-950">
       <div className="container">
         <div className="grid grid-cols-1 gap-x-[4vw] gap-y-12 pb-12 md:gap-y-16 md:pb-18 lg:grid-cols-[1fr_0.5fr] lg:gap-y-4 lg:pb-20">
           <div className="flex flex-col justify-center items-center lg:items-start">
@@ -18,28 +28,32 @@ function Footer() {
             </div>
             <div className="mb-6 md:mb-8">
               <div>
-                <p className="mb-5 md:mb-6 text-AE-Text-base text-center lg:text-left">
+                <p className="mb-5 md:mb-6 text-AE-Text-base font-semibold text-center lg:text-left text-AEGold-500">
                   Sharjah Fish Resource Authority
                 </p>
               </div>
               <div className="text-center lg:text-left">
-                <p className="mb-1 text-AE-Text-sm font-semibold">Address:</p>
-                <p className="mb-5 text-AE-Text-sm md:mb-6">
+                <p className="mb-1 text-AE-Text-sm font-semibold  text-AEBlack-950 dark:text-AEBlack-50">
+                  Address:
+                </p>
+                <p className="mb-5 text-AE-Text-sm md:mb-6 text-AEBlack-900 dark:text-AEBlack-100">
                   Sharjah, United Arab Emirates, United Arab Emirates
                 </p>
               </div>
               <div className="text-center lg:text-left">
-                <p className="mb-1 text-sm font-semibold">Contact:</p>
+                <p className="mb-1 text-AE-Text-sm font-semibold text-AEBlack-950 dark:text-AEBlack-50">
+                  Contact:
+                </p>
                 <p className="flex flex-col text-sm underline decoration-black underline-offset-1 md:mb-6">
                   <Link
                     href="tel:+(06) 511 5555"
-                    className="focus-visible:outline-none"
+                    className="focus-visible:outline-none text-AE-Text-sm text-AEBlack-900 dark:text-AEBlack-100"
                   >
                     (06) 511 5555
                   </Link>
                   <Link
                     href="mailto:info@dma.shj.ae"
-                    className="focus-visible:outline-none"
+                    className="focus-visible:outline-none AE-Text-sm text-AEBlack-900 dark:text-AEBlack-100"
                   >
                     info@fra.shj.ae
                   </Link>
@@ -88,19 +102,25 @@ function Footer() {
           <div className="text-center lg:text-left grid grid-cols-1 items-start gap-x-6 gap-y-10 lg:grid-cols-2 md:gap-x-8 md:gap-y-4">
             <ul>
               <li>
-                <Link href="/about" className="focus-visible:outline-none">
+                <Link
+                  href="/about"
+                  className="focus-visible:outline-none AE-Text-sm text-AEBlack-950 dark:text-AEBlack-50 hover:text-AEGold-500"
+                >
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/goals" className="focus-visible:outline-none">
+                <Link
+                  href="/goals"
+                  className="focus-visible:outline-none AE-Text-sm text-AEBlack-950 dark:text-AEBlack-50 hover:text-AEGold-500"
+                >
                   Goals
                 </Link>
               </li>
               <li>
                 <Link
                   href="/partnership"
-                  className="focus-visible:outline-none"
+                  className="focus-visible:outline-none AE-Text-sm text-AEBlack-950 dark:text-AEBlack-50 hover:text-AEGold-500"
                 >
                   Partnerships
                 </Link>
@@ -111,20 +131,36 @@ function Footer() {
         </div>
         <div className="h-px w-full bg-black dark:bg-AEBlack-800"></div>
         <div className="flex flex-col-reverse items-start justify-between pt-6 text-sm md:flex-row md:items-center md:pt-8">
-          <p className="mt-8 md:mt-0">
-            © {new Date().getFullYear()} All rights reserved -
-            Fish Resource Authority.
+          <p className="mt-8 md:mt-0 text-AEBlack-950 dark:text-AEBlack-50">
+            © {new Date().getFullYear()} All rights reserved - Fish Resource
+            Authority.
           </p>
           <ul className="grid grid-flow-row grid-cols-[max-content] justify-center gap-x-0 gap-y-4 text-sm md:grid-flow-col md:gap-x-6 md:gap-y-0">
             <li className="underline">
-              <Link href="#" className="focus-visible:outline-none">
+              <Link
+                href="#"
+                className="focus-visible:outline-none text-AEBlack-950 dark:text-AEBlack-50"
+              >
                 Privacy Policy
               </Link>
             </li>
             <li className="underline">
-              <Link href="#" className="focus-visible:outline-none">
+              <Link
+                href="#"
+                className="focus-visible:outline-none text-AEBlack-950 dark:text-AEBlack-50"
+              >
                 Terms of Service
               </Link>
+            </li>
+            <li>
+              <button
+                className="text-AEBlack-950 dark:text-AEBlack-50"
+                onClick={() => changeLanguage(locale === "en" ? "ar" : "en")}
+              >
+                {locale === "en"
+                  ? t("footer.change_language")
+                  : "Change language to English"}
+              </button>
             </li>
           </ul>
         </div>

@@ -52,11 +52,11 @@ const Values = () => {
                   >
                     <path d={value.svgPath}></path>
                   </svg>
-                  <h1 className="text-xl font-bold md:text-2xl ">
+                  <h1 className="text-AE-Text-xl font-bold md:text-AE-Text-2xl text-AEBlack-900 dark:text-AEBlack-200">
                     {value.title}
                   </h1>
                 </div>
-                <p className="dark:text-AEBlack-500 pl-12">
+                <p className=" pl-12 text-AE-Text-base text-AEBlack-950 dark:text-AEBlack-300">
                   {value.description}
                 </p>
               </div>

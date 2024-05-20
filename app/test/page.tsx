@@ -139,53 +139,143 @@
 //   },
 // ];
 
-"use client";
-import React from "react";
-import {
-  GlowingStarsBackgroundCard,
-  GlowingStarsDescription,
-  GlowingStarsTitle,
-} from "../components/ui/glowing-stars";
+// "use client";
+// import React from "react";
+// import {
+//   GlowingStarsBackgroundCard,
+//   GlowingStarsDescription,
+//   GlowingStarsTitle,
+// } from "../components/ui/glowing-stars";
 
-export default function GlowingStarsBackgroundCardPreview() {
+// export default function GlowingStarsBackgroundCardPreview() {
+//   return (
+//     <div className="w-screen min-h-screen px-10 sm:px-0 flex flex-col md:flex-row py-20 items-center justify-center antialiased space-x-0 md:space-x-4 space-y-4 md:space-y-0">
+//       <GlowingStarsBackgroundCard>
+//         <GlowingStarsTitle>Our Vision</GlowingStarsTitle>
+//         <div className="flex justify-between items-end">
+//           <GlowingStarsDescription>
+//             Leading in the fields of fisheries locally.
+//           </GlowingStarsDescription>
+//         </div>
+//       </GlowingStarsBackgroundCard>
+//       <GlowingStarsBackgroundCard>
+//         <GlowingStarsTitle>Our Mission</GlowingStarsTitle>
+//         <div className="flex justify-between items-end">
+//           <GlowingStarsDescription>
+//             To develop fisheries, empower fishermen, and enhance partnerships to
+//             achieve sustainable food security and economic growth.
+//           </GlowingStarsDescription>
+//         </div>
+//       </GlowingStarsBackgroundCard>
+//     </div>
+//   );
+// }
+
+// const Icon = () => {
+//   return (
+//     <svg
+//       xmlns="http://www.w3.org/2000/svg"
+//       fill="none"
+//       viewBox="0 0 24 24"
+//       stroke-width="1.5"
+//       stroke="currentColor"
+//       className="h-4 w-4 text-white stroke-2"
+//     >
+//       <path
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//         d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+//       />
+//     </svg>
+//   );
+// };
+
+// "use client";
+// import React from "react";
+// import useDarkMode from "../utils/hooks/useDarkMode";
+
+// const ThemeToggle: React.FC = () => {
+//   const [theme, setTheme] = useDarkMode();
+
+//   const toggleTheme = () => {
+//     setTheme(theme === "dark" ? "light" : "dark");
+//   };
+
+//   return (
+//     <button
+//       onClick={toggleTheme}
+//       className="p-2 bg-gray-200 dark:bg-gray-800 rounded"
+//     >
+//       Toggle to {theme === "dark" ? "light" : "dark"} mode
+//     </button>
+//   );
+// };
+
+// export default ThemeToggle;
+
+import React from "react";
+import { Meteors } from "../components/ui/meteors";
+import { CardBody, CardContainer } from "../components/ui/3d-card";
+
+export default function MeteorsDemo() {
+  const partners = [
+    { numeric: 3, number: "Three", value: "Good Health and Well-being." },
+    { numeric: 4, number: "Four", value: "Quality Education." },
+    { numeric: 8, number: "Eight", value: "Decent Work and Economic Growth." },
+    {
+      numeric: 9,
+      number: "Nine",
+      value: "Industry, Innovation, and Infrastructure..",
+    },
+    { numeric: 14, number: "Fourteen", value: "Life Below Water." },
+    { numeric: 17, number: "Seventeen", value: "Partnerships for the Goals." },
+  ];
   return (
-    <div className="w-screen min-h-screen px-10 sm:px-0 flex flex-col md:flex-row py-20 items-center justify-center antialiased space-x-0 md:space-x-4 space-y-4 md:space-y-0">
-      <GlowingStarsBackgroundCard>
-        <GlowingStarsTitle>Our Vision</GlowingStarsTitle>
-        <div className="flex justify-between items-end">
-          <GlowingStarsDescription>
-            Leading in the fields of fisheries locally.
-          </GlowingStarsDescription>
-        </div>
-      </GlowingStarsBackgroundCard>
-      <GlowingStarsBackgroundCard>
-        <GlowingStarsTitle>Our Mission</GlowingStarsTitle>
-        <div className="flex justify-between items-end">
-          <GlowingStarsDescription>
-            To develop fisheries, empower fishermen, and enhance partnerships to
-            achieve sustainable food security and economic growth.
-          </GlowingStarsDescription>
-        </div>
-      </GlowingStarsBackgroundCard>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-14 md:gap-y-28 py-28">
+      {partners.map((partner) => {
+        return (
+          <CardContainer key={partner.number} className="w-full">
+            <CardBody className=" relative group/card  h-full flex flex-col justify-center items-center">
+              <MeteorCard
+                numeric={partner.numeric}
+                number={partner.number}
+                value={partner.value}
+              />
+            </CardBody>
+          </CardContainer>
+        );
+      })}
     </div>
   );
 }
 
-const Icon = () => {
+function MeteorCard({
+  numeric,
+  number,
+  value,
+}: {
+  numeric: number;
+  number: string;
+  value: string;
+}) {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke-width="1.5"
-      stroke="currentColor"
-      className="h-4 w-4 text-white stroke-2"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-      />
-    </svg>
+    <div className=" w-full mx-auto  relative max-w-xs flex justify-center items-center">
+      <div className="absolute inset-0  h-full w-full bg-gradient-to-r from-AEGold-200 to-AEGold-500 transform scale-[0.80] rounded-full blur-3xl" />
+      <div className="relative shadow-xl bg-AEGold-500 border border-AEGold-600 w-full  px-4 py-8 h-full overflow-hidden rounded-lg flex flex-col justify-end items-start">
+        <div className="w-10 h-10 rounded-full border-2 flex items-center justify-center mb-4 border-AEBlack-100 p-2 text-2xl font-semibold">
+          {numeric}
+        </div>
+
+        <h1 className="font-bold text-xl text-AEBlack-50 relative z-50">
+          Goal {number}
+        </h1>
+
+        <p className="font-normal text-sm text-AEBlack-100 relative z-50">
+          {value}
+        </p>
+
+        <Meteors number={20} />
+      </div>
+    </div>
   );
-};
+}

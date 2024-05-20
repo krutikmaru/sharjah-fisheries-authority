@@ -1,7 +1,9 @@
 import React from "react";
+import { Meteors } from "../components/ui/meteors";
+import { CardBody, CardContainer } from "../components/ui/3d-card";
 
 function Partnerships() {
-  const rows = [
+  const partners = [
     {
       key: "1",
       number: "1",
@@ -84,28 +86,54 @@ function Partnerships() {
   ];
 
   return (
-    <div className="bg-white dark:bg-AEBlack-950 py-10 px-12 md:px-24 overflow-scroll">
-      <table className="table w-full  rounded-lg overflow-scroll">
-        <thead>
-          <tr>
-            <th className="text-left p-5 text-AEGold-500">Number</th>
-            <th className="text-left p-5 text-AEGold-500">Collaboration</th>
-            <th className="text-left p-5 text-AEGold-500">Entities</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((item) => (
-            <tr
-              className="dark:text-AEBlack-200 border-b-1 border-AEBlack-200 dark:border-AEBlack-700 hover:bg-AEBlack-50 dark:hover:bg-AEBlack-900"
-              key={item.key}
-            >
-              <td className="px-5 py-3">{item.number}</td>
-              <td className="px-5 py-3">{item.collaboration}</td>
-              <td className="px-5 py-3">{item.entities}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-14 md:gap-y-28  py-28">
+      {partners.map((partner) => {
+        return (
+          <CardContainer
+            key={partner.number}
+            className="w-full h-full min-h-[200px] "
+          >
+            <CardBody className=" relative group/card h-full flex flex-col justify-center items-center">
+              <MeteorCard
+                number={partner.number}
+                collaboration={partner.collaboration}
+                entities={partner.entities}
+              />
+            </CardBody>
+          </CardContainer>
+        );
+      })}
+    </div>
+  );
+}
+
+function MeteorCard({
+  number,
+  collaboration,
+  entities,
+}: {
+  number: string;
+  collaboration: string;
+  entities: string;
+}) {
+  return (
+    <div className=" w-full h-full mx-auto  relative max-w-xs flex justify-center items-center">
+      <div className="absolute inset-0  h-full w-full bg-gradient-to-r from-AEGold-200 to-AEGold-500 transform scale-[0.80] rounded-full blur-3xl" />
+      <div className="relative shadow-xl bg-AEGold-500 border border-AEGold-600 w-full  px-4 py-8 h-full overflow-hidden rounded-lg flex flex-col justify-end items-start">
+        <div className="w-10 h-10 rounded-full border-2 flex items-center justify-center mb-4 border-AEBlack-100 p-2 text-AE-Text-2xl font-semibold">
+          {number}
+        </div>
+
+        <h1 className="font-bold text-AE-Text-xl text-AEBlack-50 relative z-50">
+          {collaboration}
+        </h1>
+
+        <p className="font-normal text-AE-Text-sm text-AEBlack-100 relative z-50">
+          {entities}
+        </p>
+
+        <Meteors number={20} />
+      </div>
     </div>
   );
 }

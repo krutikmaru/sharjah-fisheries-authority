@@ -1,5 +1,7 @@
 import Image from "next/image";
 import React from "react";
+import { Meteors } from "../components/ui/meteors";
+import { CardBody, CardContainer } from "../components/ui/3d-card";
 
 const Goals = () => {
   return (
@@ -80,33 +82,75 @@ const Goals = () => {
               their sustainability
             </p>
           </div>
-          <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-8">
-            {developmentGoals.map((developmentGoal) => {
-              return (
-                <div
-                  key={developmentGoal.number}
-                  className="border-2 border-AEGold-100 dark:border-AEGold-700 p-6 md:p-8 lg:p-12 rounded-lg"
-                >
-                  <div className="mb-5 md:mb-6">
-                    <span className="mb-5 text-lg font-bold leading-[1.2] md:mb-6 md:text-xl lg:text-2xl border-2 border-AEBlack-200 px-6 py-1 rounded-full text-AEGold-500">
-                      {developmentGoal.numeric}
-                    </span>
-                  </div>
-                  <h4 className="mb-2 text-4xl font-bold leading-[1.2] md:text-4xl lg:text-6xl tracking-tighter text-AEBlack-900 dark:text-AEBlack-100">
-                    Goal {developmentGoal.number}
-                  </h4>
-                  <p className="text-AEBlack-900 dark:text-AEBlack-100">
-                    {developmentGoal.goal}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
+          <DevelopmentGoals />
         </div>
       </section>
     </>
   );
 };
+
+function DevelopmentGoals() {
+  const developmentGoals = [
+    { numeric: 3, number: "Three", value: "Good Health and Well-being." },
+    { numeric: 4, number: "Four", value: "Quality Education." },
+    { numeric: 8, number: "Eight", value: "Decent Work and Economic Growth." },
+    {
+      numeric: 9,
+      number: "Nine",
+      value: "Industry, Innovation, and Infrastructure..",
+    },
+    { numeric: 14, number: "Fourteen", value: "Life Below Water." },
+    { numeric: 17, number: "Seventeen", value: "Partnerships for the Goals." },
+  ];
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-14 md:gap-y-28 ">
+      {developmentGoals.map((developmentGoal) => {
+        return (
+          <CardContainer key={developmentGoal.number} className="w-full">
+            <CardBody className=" relative group/card  h-full flex flex-col justify-center items-center">
+              <MeteorCard
+                numeric={developmentGoal.numeric}
+                number={developmentGoal.number}
+                value={developmentGoal.value}
+              />
+            </CardBody>
+          </CardContainer>
+        );
+      })}
+    </div>
+  );
+}
+
+function MeteorCard({
+  numeric,
+  number,
+  value,
+}: {
+  numeric: number;
+  number: string;
+  value: string;
+}) {
+  return (
+    <div className=" w-full mx-auto  relative max-w-xs flex justify-center items-center">
+      <div className="absolute inset-0  h-full w-full bg-gradient-to-r from-AEGold-200 to-AEGold-500 transform scale-[0.80] rounded-full blur-3xl" />
+      <div className="relative shadow-xl bg-AEGold-500 border border-AEGold-600 w-full  px-4 py-8 h-full overflow-hidden rounded-lg flex flex-col justify-end items-start">
+        <div className="w-10 h-10 rounded-full border-2 flex items-center justify-center mb-4 border-AEBlack-100 p-2 text-AE-Text-2xl font-semibold">
+          {numeric}
+        </div>
+
+        <h1 className="font-bold text-AE-Text-xl text-AEBlack-50 relative z-50">
+          Goal {number}
+        </h1>
+
+        <p className="font-normal text-AE-Text-sm text-AEBlack-100 relative z-50">
+          {value}
+        </p>
+
+        <Meteors number={20} />
+      </div>
+    </div>
+  );
+}
 
 export default Goals;
 
@@ -152,16 +196,4 @@ const goals = [
       "Achieve the Authority’s self-sufficiency by utilizing and investing in fisheries resources and preserving the marine environment to provide sustainable food security in the emirate.",
     svgPath: `M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z`,
   },
-];
-const developmentGoals = [
-  { number: "Three", numeric: 4, goal: "Good Health and Well-being." },
-  { number: "Four", numeric: 3, goal: "Quality Education." },
-  { number: "Eight", numeric: 8, goal: "Decent Work and Economic Growth." },
-  {
-    number: "Nine",
-    numeric: 9,
-    goal: "Industry, Innovation, and Infrastructure.",
-  },
-  { number: "Fourteen", numeric: 14, goal: "Life Below Water." },
-  { number: "Seventeen", numeric: 17, goal: "Partnerships for the Goals." },
 ];
