@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 
 // import Image from "next/image";
 // import React from "react";
@@ -213,69 +213,176 @@
 
 // export default ThemeToggle;
 
-import React from "react";
-import { Meteors } from "../components/ui/meteors";
-import { CardBody, CardContainer } from "../components/ui/3d-card";
+// import React from "react";
+// import { Meteors } from "../components/ui/meteors";
+// import { CardBody, CardContainer } from "../components/ui/3d-card";
 
-export default function MeteorsDemo() {
-  const partners = [
-    { numeric: 3, number: "Three", value: "Good Health and Well-being." },
-    { numeric: 4, number: "Four", value: "Quality Education." },
-    { numeric: 8, number: "Eight", value: "Decent Work and Economic Growth." },
-    {
-      numeric: 9,
-      number: "Nine",
-      value: "Industry, Innovation, and Infrastructure..",
-    },
-    { numeric: 14, number: "Fourteen", value: "Life Below Water." },
-    { numeric: 17, number: "Seventeen", value: "Partnerships for the Goals." },
-  ];
+// export default function MeteorsDemo() {
+//   const partners = [
+//     { numeric: 3, number: "Three", value: "Good Health and Well-being." },
+//     { numeric: 4, number: "Four", value: "Quality Education." },
+//     { numeric: 8, number: "Eight", value: "Decent Work and Economic Growth." },
+//     {
+//       numeric: 9,
+//       number: "Nine",
+//       value: "Industry, Innovation, and Infrastructure..",
+//     },
+//     { numeric: 14, number: "Fourteen", value: "Life Below Water." },
+//     { numeric: 17, number: "Seventeen", value: "Partnerships for the Goals." },
+//   ];
+//   return (
+//     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-14 md:gap-y-28 py-28">
+//       {partners.map((partner) => {
+//         return (
+//           <CardContainer key={partner.number} className="w-full">
+//             <CardBody className=" relative group/card  h-full flex flex-col justify-center items-center">
+//               <MeteorCard
+//                 numeric={partner.numeric}
+//                 number={partner.number}
+//                 value={partner.value}
+//               />
+//             </CardBody>
+//           </CardContainer>
+//         );
+//       })}
+//     </div>
+//   );
+// }
+
+// function MeteorCard({
+//   numeric,
+//   number,
+//   value,
+// }: {
+//   numeric: number;
+//   number: string;
+//   value: string;
+// }) {
+//   return (
+//     <div className=" w-full mx-auto  relative max-w-xs flex justify-center items-center">
+//       <div className="absolute inset-0  h-full w-full bg-gradient-to-r from-AEGold-200 to-AEGold-500 transform scale-[0.80] rounded-full blur-3xl" />
+//       <div className="relative shadow-xl bg-AEGold-500 border border-AEGold-600 w-full  px-4 py-8 h-full overflow-hidden rounded-lg flex flex-col justify-end items-start">
+//         <div className="w-10 h-10 rounded-full border-2 flex items-center justify-center mb-4 border-AEBlack-100 p-2 text-2xl font-semibold">
+//           {numeric}
+//         </div>
+
+//         <h1 className="font-bold text-xl text-AEBlack-50 relative z-50">
+//           Goal {number}
+//         </h1>
+
+//         <p className="font-normal text-sm text-AEBlack-100 relative z-50">
+//           {value}
+//         </p>
+
+//         <Meteors number={20} />
+//       </div>
+//     </div>
+//   );
+// }
+
+// components/Carousel.js
+// components/Carousel.js
+"use client";
+import { useEffect, useState, useRef } from "react";
+import Image from "next/image";
+
+const images = [
+  "/images/home-1.jpg",
+  "/images/home-2.jpg",
+  "/images/home-3.jpg",
+];
+
+const Carousel = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const carouselRef = useRef(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextSlide = () => {
+    if (!isTransitioning) {
+      setIsTransitioning(true);
+      setCurrentIndex((prevIndex) => prevIndex + 1);
+    }
+  };
+
+  const prevSlide = () => {
+    if (!isTransitioning) {
+      setIsTransitioning(true);
+      setCurrentIndex((prevIndex) => prevIndex - 1);
+    }
+  };
+
+  const handleTransitionEnd = () => {
+    setIsTransitioning(false);
+    if (currentIndex >= images.length) {
+      setCurrentIndex(0);
+      carouselRef.current.style.transition = "none";
+      carouselRef.current.style.transform = `translateX(0%)`;
+    } else if (currentIndex < 0) {
+      setCurrentIndex(images.length - 1);
+      carouselRef.current.style.transition = "none";
+      carouselRef.current.style.transform = `translateX(-${
+        (images.length - 1) * 100
+      }%)`;
+    }
+  };
+
+  useEffect(() => {
+    if (carouselRef.current) {
+      carouselRef.current.style.transition = isTransitioning
+        ? "transform 0.5s ease-in-out"
+        : "none";
+      carouselRef.current.style.transform = `translateX(-${
+        currentIndex * 100
+      }%)`;
+    }
+  }, [currentIndex, isTransitioning]);
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-14 md:gap-y-28 py-28">
-      {partners.map((partner) => {
-        return (
-          <CardContainer key={partner.number} className="w-full">
-            <CardBody className=" relative group/card  h-full flex flex-col justify-center items-center">
-              <MeteorCard
-                numeric={partner.numeric}
-                number={partner.number}
-                value={partner.value}
-              />
-            </CardBody>
-          </CardContainer>
-        );
-      })}
-    </div>
-  );
-}
-
-function MeteorCard({
-  numeric,
-  number,
-  value,
-}: {
-  numeric: number;
-  number: string;
-  value: string;
-}) {
-  return (
-    <div className=" w-full mx-auto  relative max-w-xs flex justify-center items-center">
-      <div className="absolute inset-0  h-full w-full bg-gradient-to-r from-AEGold-200 to-AEGold-500 transform scale-[0.80] rounded-full blur-3xl" />
-      <div className="relative shadow-xl bg-AEGold-500 border border-AEGold-600 w-full  px-4 py-8 h-full overflow-hidden rounded-lg flex flex-col justify-end items-start">
-        <div className="w-10 h-10 rounded-full border-2 flex items-center justify-center mb-4 border-AEBlack-100 p-2 text-2xl font-semibold">
-          {numeric}
-        </div>
-
-        <h1 className="font-bold text-xl text-AEBlack-50 relative z-50">
-          Goal {number}
-        </h1>
-
-        <p className="font-normal text-sm text-AEBlack-100 relative z-50">
-          {value}
-        </p>
-
-        <Meteors number={20} />
+    <div className="absolute w-full overflow-hidden opacity-30">
+      <div
+        ref={carouselRef}
+        className="flex"
+        onTransitionEnd={handleTransitionEnd}
+      >
+        {images.concat(images).map((src, index) => (
+          <div key={index} className="w-full flex-shrink-0 h-screen relative">
+            <Image
+              src={src}
+              alt={`Slide ${index}`}
+              layout="fill"
+              objectFit="cover"
+              className="w-full h-full"
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
-}
+};
+
+const Hero = () => {
+  return (
+    <div className="h-screen flex items-center justify-center relative overflow-hidden">
+      <Carousel />
+      <div className="relative z-10 text-center px-4 sm:px-20">
+        <h1 className="text-AE-Text-H3 sm:text-AE-Text-H2 md:text-AE-Text-H1 lg:text-AE-Text-Display font-bold text-AEBlack-950 dark:text-AEBlack-50 tracking-tighter">
+          Fish Resource Authority
+        </h1>
+        <p className="max-w-2xl text-AE-Text-sm md:text-AE-Text-lg mt-4 text-AEBlack-800 dark:text-AEBlack-200 mx-auto">
+          To develop fisheries, empower fishermen, and enhance partnerships to
+          achieve sustainable food security and economic growth.
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default Hero;

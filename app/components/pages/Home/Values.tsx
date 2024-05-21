@@ -56,13 +56,13 @@ const Values = () => {
                     {value.title}
                   </h1>
                 </div>
-                <p className=" pl-12 text-AE-Text-base text-AEBlack-950 dark:text-AEBlack-300">
+                <p className="pl-12 text-AE-Text-base text-AEBlack-950 dark:text-AEBlack-300">
                   {value.description}
                 </p>
               </div>
             ))}
           </div>
-          <CardContainer className="inter-var  rounded-md  relative flex flex-col items-start justify-start antialiased">
+          <CardContainer className="inter-var rounded-md relative flex flex-col items-start justify-start antialiased">
             <CardBody className="dark:bg-AEBlack-950 relative group/card w-full h-full backdrop-blur-lg dark:border-white/[0.2] border-black/[0.1] rounded-xl p-6 border flex flex-col justify-center items-center space-y-4 ">
               <CardItem
                 translateZ="50"
@@ -72,7 +72,7 @@ const Values = () => {
                   <img
                     src="images/fishes-2.jpg"
                     className="w-full object-cover rounded-lg"
-                    alt="Placeholder image"
+                    alt="School of fishes"
                   />
                 </div>
               </CardItem>

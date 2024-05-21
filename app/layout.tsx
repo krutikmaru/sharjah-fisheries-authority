@@ -27,7 +27,7 @@ export default function RootLayout({
               <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
               <Navigation />
               <div className="w-full min-h-screen relative z-20">
-                {children}{" "}
+                {children}
               </div>
             </div>
             <Footer />

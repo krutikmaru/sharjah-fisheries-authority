@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import Carousel from "@/app/test/page";
 
 export const HeroParallax = ({
   products,
@@ -57,7 +58,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[250vh]  pt-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[250vh] overflow-hidden  antialiased relative flex flex-col self-auto [perspective:600px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -70,31 +71,7 @@ export const HeroParallax = ({
         className=""
       >
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
-          {firstRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-        <motion.div className="flex flex-row  mb-20 space-x-20 ">
-          {secondRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateXReverse}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
-          {thirdRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateXReverse}
-              key={product.title}
-            />
-          ))}
+          <Carousel />
         </motion.div>
       </motion.div>
     </div>
@@ -103,8 +80,8 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-10 md:py-28 w-full  left-0 top-0 px-4 sm:px-20">
-      <h1 className="text-AE-Text-H3 sm:text-AE-Text-H2 md:text-AE-Text-H1 lg:text-AE-Text-Display font-bold text-AEBlack-950 dark:text-AEBlack-50 tracking-tighter ">
+    <div className="max-w-7xl relative mx-auto py-10 md:py-28 w-full left-0 top-0 px-4 sm:px-20">
+      <h1 className="text-AE-Text-H3 sm:text-AE-Text-H2 md:text-AE-Text-H1 lg:text-AE-Text-Display font-bold text-AEBlack-950 dark:text-AEBlack-50 tracking-tighter">
         Fish Resource Authority
       </h1>
       <p className="max-w-2xl text-AE-Text-sm md:text-AE-Text-lg mt-4 text-AEBlack-800 dark:text-AEBlack-200">

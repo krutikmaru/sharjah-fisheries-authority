@@ -27,7 +27,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/components/layout/Footer.jsx",
-    "app/components/layout/Footer.jsx"
+    "app/components/layout/Footer.jsx",
+    "app/components/pages/Home/Hero.jsx",
+    "app/test/page.jsx"
   ],
   "exclude": ["node_modules"]
 }
